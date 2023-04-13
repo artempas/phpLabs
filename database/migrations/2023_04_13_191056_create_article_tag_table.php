@@ -12,12 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('article_tag', function (Blueprint $table) {
-            $table->bigIncrements('article_id');
-            $table->foreign('article_id')
+            $table->bigInteger('article_id')
                 ->references('id')
                 ->on('articles')
                 ->onDelete('cascade');
-            $table->bigIncrements('tag_id');
+            $table->bigInteger('tag_id');
             $table->foreign('tag_id')
                 ->references('id')
                 ->on('tags')

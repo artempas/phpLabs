@@ -23,8 +23,9 @@ class TagFactory extends Factory
         $name=fake()->word;
         $slug=Str::slug($name);
         return [
-            'name'=>$name,
-            'slug'=>$slug
+            'name' => $name,
+            'slug' => $slug,
+            'created_at' => fake()->dateTimeThisYear()
         ];
     }
 }
